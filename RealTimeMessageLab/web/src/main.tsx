@@ -22,6 +22,7 @@ function App() {
   const [clientName, setClientName] = useState("Browser");
   const [text, setText] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const [isRealtimeEnabled, setIsRealtimeEnabled] = useState(true);
   const [connectionState, setConnectionState] = useState<"connecting" | "open" | "closed">("connecting");
   const [error, setError] = useState<string | null>(null);
 
@@ -56,6 +57,12 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (!isRealtimeEnabled) {
+      setConnectionState("closed");
+      return;
+    }
+
+    setConnectionState("connecting");
     const socket = new WebSocket(websocketUrl);
 
     socket.addEventListener("open", () => {
@@ -89,7 +96,7 @@ function App() {
     return () => {
       socket.close();
     };
-  }, []);
+  }, [isRealtimeEnabled]);
 
   async function sendMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -147,7 +154,16 @@ function App() {
             <p className="eyebrow">Realtime Message Lab</p>
             <h1>Message Stream</h1>
           </div>
-          <ConnectionBadge state={connectionState} />
+          <div className="connection-controls">
+            <ConnectionBadge state={connectionState} />
+            <button
+              className="connection-toggle"
+              type="button"
+              onClick={() => setIsRealtimeEnabled((enabled) => !enabled)}
+            >
+              {isRealtimeEnabled ? "Disable" : "Enable"}
+            </button>
+          </div>
         </header>
 
         <section className="stream-layout">

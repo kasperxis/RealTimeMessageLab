@@ -68,6 +68,12 @@ h2 {
   font-size: 1.1rem;
 }
 
+.connection-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .connection-badge {
   min-width: 98px;
   border-radius: 999px;
@@ -89,6 +95,18 @@ h2 {
   border-color: #d99a8c;
   background: #ffe6e0;
   color: #8b2f20;
+}
+
+.connection-toggle {
+  min-height: 38px;
+  border: 1px solid #b7c5bd;
+  padding: 0 14px;
+  background: #ffffff;
+  color: #2f4339;
+}
+
+.connection-toggle:hover {
+  border-color: #216351;
 }
 
 .stream-layout {
@@ -240,6 +258,7 @@ button:disabled {
     grid-template-columns: 1fr;
   }
 
+  .connection-controls,
   .connection-badge {
     width: max-content;
   }

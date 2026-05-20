@@ -9,3 +9,7 @@ artifacts/
 .vs/
 .vscode/
 *.nested-backup/
+
+node_modules/
+dist/
+*.tsbuildinfo

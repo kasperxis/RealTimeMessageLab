@@ -1,6 +1,6 @@
 :root {
-  color: #15201b;
-  background: #eef2ef;
+  color: #e5e7eb;
+  background: #090b0d;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
@@ -26,15 +26,12 @@ textarea {
 
 .app-shell {
   min-height: 100vh;
-  padding: 32px;
-  background:
-    linear-gradient(135deg, rgba(33, 99, 81, 0.14), transparent 34%),
-    linear-gradient(315deg, rgba(166, 76, 62, 0.13), transparent 30%),
-    #eef2ef;
+  padding: 48px 32px;
+  background: #090b0d;
 }
 
 .workspace {
-  width: min(1120px, 100%);
+  width: min(1080px, 100%);
   margin: 0 auto;
 }
 
@@ -43,85 +40,95 @@ textarea {
   align-items: flex-end;
   justify-content: space-between;
   gap: 20px;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 
 .eyebrow,
 .panel-header p {
   margin: 0;
-  color: #607169;
-  font-size: 0.88rem;
+  color: #737982;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 h1,
 h2 {
   margin: 0;
   line-height: 1.1;
-  letter-spacing: 0;
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
+  margin-top: 6px;
+  color: #f9fafb;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
 }
 
 h2 {
-  font-size: 1.1rem;
+  color: #f3f4f6;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .connection-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .connection-badge {
-  min-width: 98px;
+  min-width: 82px;
+  border: 1px solid #292d32;
   border-radius: 999px;
-  padding: 8px 12px;
-  border: 1px solid #c7d2cc;
-  background: #ffffff;
-  color: #3d4d45;
+  padding: 6px 10px;
+  background: #111418;
+  color: #a6adb6;
+  font-size: 0.75rem;
   text-align: center;
   text-transform: capitalize;
 }
 
 .connection-badge.open {
-  border-color: #77b59c;
-  background: #dff4e9;
-  color: #176344;
+  border-color: rgba(52, 211, 153, 0.25);
+  background: rgba(52, 211, 153, 0.08);
+  color: #6ee7b7;
 }
 
 .connection-badge.closed {
-  border-color: #d99a8c;
-  background: #ffe6e0;
-  color: #8b2f20;
+  border-color: rgba(248, 113, 113, 0.25);
+  background: rgba(248, 113, 113, 0.08);
+  color: #fca5a5;
 }
 
 .connection-toggle {
-  min-height: 38px;
-  border: 1px solid #b7c5bd;
-  padding: 0 14px;
-  background: #ffffff;
-  color: #2f4339;
+  min-height: 30px;
+  border: 1px solid #292d32;
+  padding: 0 11px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.75rem;
 }
 
 .connection-toggle:hover {
-  border-color: #216351;
+  border-color: #4b5159;
+  color: #f3f4f6;
 }
 
 .stream-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 16px;
   align-items: start;
 }
 
 .message-panel,
 .composer {
-  border: 1px solid #d4ddd7;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 18px 50px rgba(44, 59, 52, 0.12);
+  border: 1px solid #20242a;
+  border-radius: 4px;
+  background: #0e1114;
 }
 
 .message-panel {
@@ -133,87 +140,114 @@ h2 {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 20px;
-  border-bottom: 1px solid #dce4df;
+  padding: 16px 18px;
+  border-bottom: 1px solid #20242a;
+}
+
+.panel-header p {
+  margin-top: 6px;
+  font-size: 0.65rem;
 }
 
 .panel-header span {
-  color: #607169;
+  color: #737982;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
   white-space: nowrap;
 }
 
 .message-list {
   display: grid;
-  gap: 12px;
+  align-content: start;
+  gap: 8px;
   max-height: 62vh;
   min-height: 440px;
   margin: 0;
-  padding: 18px;
+  padding: 12px;
   overflow: auto;
   list-style: none;
+  scrollbar-color: #343940 transparent;
 }
 
 .empty-state {
   display: grid;
   min-height: 240px;
   place-items: center;
-  color: #607169;
+  color: #737982;
+  font-size: 0.875rem;
 }
 
 .message-item {
-  border: 1px solid #dce4df;
-  border-radius: 8px;
-  padding: 14px;
-  background: #ffffff;
+  border: 1px solid #20242a;
+  border-radius: 3px;
+  padding: 12px 13px;
+  background: #121519;
 }
 
 .message-meta {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 8px;
-  color: #405148;
+  margin-bottom: 7px;
+}
+
+.message-meta strong {
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  font-weight: 600;
 }
 
 .message-meta span {
-  color: #77877f;
-  font-size: 0.9rem;
+  color: #68707a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.7rem;
   white-space: nowrap;
 }
 
 .message-item p {
   margin: 0;
+  color: #d1d5db;
+  font-size: 0.9rem;
   overflow-wrap: anywhere;
 }
 
 .composer {
   display: grid;
-  gap: 16px;
-  padding: 18px;
+  gap: 15px;
+  padding: 16px;
 }
 
 label {
   display: grid;
-  gap: 8px;
-  color: #405148;
-  font-weight: 700;
+  gap: 7px;
+  color: #9ca3af;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 input,
 textarea {
   width: 100%;
-  border: 1px solid #cbd6d0;
-  border-radius: 7px;
-  padding: 11px 12px;
-  background: #fbfdfc;
-  color: #15201b;
+  border: 1px solid #292d32;
+  border-radius: 3px;
+  padding: 10px 11px;
+  background: #121519;
+  color: #e5e7eb;
+  font-size: 0.875rem;
   outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #555c65;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #216351;
-  box-shadow: 0 0 0 3px rgba(33, 99, 81, 0.15);
+  border-color: #4b5563;
+  box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.1);
 }
 
 textarea {
@@ -221,32 +255,39 @@ textarea {
 }
 
 button {
-  min-height: 44px;
-  border: 0;
-  border-radius: 7px;
-  background: #216351;
-  color: #ffffff;
+  min-height: 38px;
+  border: 1px solid #374151;
+  border-radius: 3px;
+  background: #e5e7eb;
+  color: #111418;
   cursor: pointer;
-  font-weight: 800;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+button:hover {
+  background: #f9fafb;
 }
 
 button:disabled {
   cursor: wait;
-  opacity: 0.68;
+  opacity: 0.55;
 }
 
 .error-message {
   margin: 0;
-  border: 1px solid #d99a8c;
-  border-radius: 7px;
-  padding: 10px 12px;
-  background: #ffe6e0;
-  color: #8b2f20;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  border-radius: 3px;
+  padding: 9px 10px;
+  background: rgba(248, 113, 113, 0.08);
+  color: #fca5a5;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 780px) {
   .app-shell {
-    padding: 18px;
+    padding: 28px 18px;
   }
 
   .topbar,
